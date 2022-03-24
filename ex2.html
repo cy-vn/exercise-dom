@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<div>
+    <ul></ul>
+    <ul>
+    </ul>
+</div>
+<button onclick="_copy()">Copy</button>
+<script>
+    function _copy() {
+        const liNodes = document.querySelectorAll('ul > li');
+        const ulNode = document.querySelector('div > ul:last-child');
+        for (let i = 0; i < liNodes.length; i++) {
+            const liNode = liNodes[i];
+            const liClone = liNode.cloneNode(true);
+            ulNode.appendChild(liClone);
+        }
+    }
+</script>
+</body>
+</html>

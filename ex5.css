@@ -1,0 +1,21 @@
+.accordions {
+    width: 20rem;
+    margin: 0px auto;
+    border:1px solid #cdcdcd;
+}
+
+.accordions .panel > .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #cdcdcd;
+    padding: 0.5rem;
+}
+
+.accordions .content{
+    padding:0.5rem
+}
+
+.hide{
+    display: none;
+}

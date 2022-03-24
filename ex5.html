@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="ex5.css"/>
+</head>
+<body>
+<div class="accordions">
+    <div class="panel">
+        <div class="heading" role="button">
+             <span>
+                 <i class="bi bi-caret-down-fill"></i>
+             </span>
+
+            <span>Nội dung 1</span>
+        </div>
+        <div class="content hide">
+            Career, result and an ancient heavens of sorrow.
+            Career, result and an ancient heavens of sorrow.
+            Career, result and an ancient heavens of sorrow.
+            Career, result and an ancient heavens of sorrow.
+        </div>
+    </div>
+    <div class="panel">
+        <div class="heading" role="button">
+                 <span>
+                 <i class="bi bi-caret-down-fill"></i>
+             </span>
+
+            <span>Nội dung 1</span>
+        </div>
+        <div class="content hide">
+            Career, result and an ancient heavens of sorrow.
+            Career, result and an ancient heavens of sorrow.
+            Career, result and an ancient heavens of sorrow.
+            Career, result and an ancient heavens of sorrow.
+        </div>
+    </div>
+    <div class="panel">
+        <div class="heading" role="button">
+                 <span>
+                 <i class="bi bi-caret-down-fill"></i>
+             </span>
+
+            <span>Nội dung 1</span>
+        </div>
+        <div class="content hide">
+            Career, result and an ancient heavens of sorrow.
+            Career, result and an ancient heavens of sorrow.
+            Career, result and an ancient heavens of sorrow.
+            Career, result and an ancient heavens of sorrow.
+        </div>
+    </div>
+</div>
+
+<script>
+    const btnHeadings = document.querySelectorAll('.accordions .heading');
+    for (let i = 0; i < btnHeadings.length; i++) {
+        btnHeadings[i].addEventListener('click', (event) => {
+            const contentNodes = event.target.closest('.panel').closest('.accordions').querySelectorAll('.content');
+            for (let j = 0; j < contentNodes.length; j++) {
+                contentNodes[j].classList.add('hide');
+            }
+            event.target.closest('.panel').querySelector('.content').classList.remove('hide');
+        });
+    }
+</script>
+</body>
+</html>

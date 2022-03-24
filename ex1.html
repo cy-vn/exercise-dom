@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<button onclick="_reOrder()">ReOrder</button>
+<script>
+    function _reOrder() {
+        const liNodes = document.querySelectorAll('li');
+        const ulNode = document.querySelector('ul');
+        for (let i = liNodes.length-1; i >=0; i--) {
+            ulNode.appendChild(liNodes[i]);
+        }
+    }
+</script>
+</body>
+</html>
