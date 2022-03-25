@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="photo-wrapper">
+    <div class="photo-inner">
+        <div class="img-item">
+            <img src="img/ryan-ancill-aJYO8JmVodY-unsplash.jpg"/>
+        </div>
+        <div class="img-item">
+            <img src="img/ayumi-kubo-yMMCucrqMtI-unsplash.jpg"/>
+        </div>
+        <div class="img-item">
+            <img src="img/david-rybar-0fm2TsorGhY-unsplash.jpg"/>
+        </div>
+        <div class="img-item">
+            <img src="img/mathilde-langevin-Tt0KZZxRVBc-unsplash.jpg"/>
+        </div>
+        <div class="img-item">
+            <img src="img/wolfgang-hasselmann-OCKADBZr4AM-unsplash.jpg"/>
+        </div>
+        <div class="img-item">
+            <img src="img/sies-kranen-52gu55W0wPs-unsplash.jpg"/>
+        </div>
+
+
+    </div>
+
+    <div class="zoom-out hidden">
+        <img src="img/sies-kranen-52gu55W0wPs-unsplash.jpg"/>
+    </div>
+</div>
+
+
+<style>
+    .photo-inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 2rem;
+        width: 30rem;
+        height: 30rem;
+        margin: 0px auto
+    }
+
+    .photo-inner > div {
+        width: 10rem;
+        height: 10rem;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .photo-inner   .img-item img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+    .zoom-out {
+        position: fixed;
+    }
+
+    .zoom-out img {
+        width: 30rem;
+    }
+
+    .photo-wrapper .hidden{
+        display: none;
+    }
+</style>
+
+<script src="main.js">
+
+</script>
+</body>
+</html>

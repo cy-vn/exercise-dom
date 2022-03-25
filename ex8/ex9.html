@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="info">
+        <div class="bar">
+            <div class="inner-bar"></div>
+        </div>
+
+        <div class="score">
+            10
+        </div>
+    </div>
+
+
+    <div class="content-question">
+        <h2 class="question">1. Question ?</h2>
+        <div class="answers">
+            <!--  <div>
+                  <div class="answer">
+                      Hypertext Preprocessor
+                  </div>
+              </div>
+              <div>
+                  <div class="answer">
+                      Hypertext Preprocessor
+                  </div>
+              </div>
+              <div>
+                  <div class="answer">
+                      Hypertext Preprocessor
+                  </div>
+              </div>
+              <div>
+                  <div class="answer">
+                      Hypertext Preprocessor
+                  </div>
+              </div>-->
+        </div>
+    </div>
+</div>
+
+<style>
+    .wrapper {
+        background: white;
+        max-width: 1024px;
+        margin: 0 auto;
+        width: 800px
+    }
+
+    .wrapper .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .wrapper .score {
+        font-size: 2rem;
+        font-weight: bold;
+        background: #ff8000;
+        color: white;
+        padding: 2rem
+    }
+
+    .wrapper .answers {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .wrapper .answers .answer {
+        background: #ff8000;
+        padding: 2rem;
+        border-radius: 5rem;
+        font-weight: bold;
+    }
+</style>
+<script>
+    const questions = [
+        {
+            question: 'PHP stand for ?',
+            answers: [
+                {
+                    text: 'Hypertext Preprocessor',
+                    correct: true
+                },
+                {
+                    text: 'Personal Home Page',
+                    correct: false
+                },
+                {
+                    text: 'Perl Hypertext Preprocessor',
+                    correct: false
+                },
+                {
+                    text: 'Professional Home Page ',
+                    correct: false
+                }
+            ]
+        },
+        {
+            question: 'JS stand for ?',
+            answers: [
+                {
+                    text: 'JavaScript',
+                    correct: true
+                },
+                {
+                    text: 'Java Secure',
+                    correct: false
+                },
+                {
+                    text: 'JavaScript Secure',
+                    correct: false
+                },
+                {
+                    text: 'JavaScript Senior',
+                    correct: false
+                }
+            ]
+        }
+    ];
+    let currentQuestion = 0;
+    let activeQuestion = questions[currentQuestion];
+    const questionNode = document.querySelector('.question');
+    questionNode.innerHTML = activeQuestion.question;//đổ câu hỏi
+    const answersNode = document.querySelector('.answers');
+    let answers = activeQuestion.answers;
+    let answersHTML = '';
+    for (let i = 0; i < answers.length; i++) {
+        const answer = answers[i];
+        answersHTML += `<div>
+                <div class="answer" role="button">
+                    ${answer.text}
+                </div>
+            </div>`;
+    }
+    answersNode.innerHTML = answersHTML;
+    const answerNodes = document.querySelectorAll('.answer');
+    for (let i = 0; i < answerNodes.length; i++) {
+        answerNodes[i].addEventListener('click', () => {
+
+        });
+    }
+</script>
+</body>
+</html>
